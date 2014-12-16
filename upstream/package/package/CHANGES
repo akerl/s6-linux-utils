@@ -1,0 +1,33 @@
+20110927
+	ui: fixed s6-mount usage message
+	code: added s6-devd
+20110928
+	version: 0.11
+20111206
+	bug: need -D_GNU_SOURCE for struct ucred def in s6-devd.c
+	version: 0.12
+20121112
+	code: added -z fstab option to s6-mount
+20130207
+	build: switched to non-sp-supporting build system
+20130212
+	version: 1.0.0
+20130317
+	bug: s6-devd wasn't exported
+	  fix: add s6-devd to command.exported
+	doc: fixed the upgrade.html title
+20130320
+	version: 1.0.1
+20130918
+	bug: s6-mount was in 0700 mode
+	  fix: change it to 0755
+20130926
+	version: 1.0.2
+20131220
+	code: started s6-ps
+20140411
+	build: changed to 4-number versioning
+	deps: moved to skalibs-1.6.0.0
+20140514
+	code: finished s6-ps
+	version: 1.0.3.1
