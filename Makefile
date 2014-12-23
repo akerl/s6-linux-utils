@@ -19,7 +19,7 @@ SKALIBS_PATH = --with-sysdeps=$(SKALIBS_DIR)/usr/lib/skalibs/sysdeps --with-lib=
 default: upstream/Makefile container
 
 upstream/Makefile:
-        git submodule update --init
+	git submodule update --init
 
 manual:
 	./meta/launch /bin/bash || true
