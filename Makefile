@@ -1,4 +1,5 @@
 PACKAGE = s6-linux-utils
+ORG = amylum
 BUILD_DIR = /tmp/$(PACKAGE)-build
 RELEASE_DIR = /tmp/$(PACKAGE)-release
 RELEASE_FILE = /tmp/$(PACKAGE).tar.gz
@@ -8,8 +9,8 @@ PATCH_VERSION = $$(cat version)
 VERSION = $(PACKAGE_VERSION)-$(PATCH_VERSION)
 CONF_FLAGS = --enable-allstatic --enable-static --enable-static-libc
 
-SKALIBS_VERSION = 2.0.0.0-10
-SKALIBS_URL = https://github.com/akerl/skalibs/releases/download/$(SKALIBS_VERSION)/skalibs.tar.gz
+SKALIBS_VERSION = 2.0.0.0-11
+SKALIBS_URL = https://github.com/amylum/skalibs/releases/download/$(SKALIBS_VERSION)/skalibs.tar.gz
 SKALIBS_TAR = skalibs.tar.gz
 SKALIBS_DIR = /tmp/skalibs
 SKALIBS_PATH = --with-sysdeps=$(SKALIBS_DIR)/usr/lib/skalibs/sysdeps --with-lib=$(SKALIBS_DIR)/usr/lib/skalibs --with-include=$(SKALIBS_DIR)/usr/include --with-dynlib=$(SKALIBS_DIR)/usr/lib
@@ -50,7 +51,7 @@ push: version
 	ssh -oStrictHostKeyChecking=no git@github.com &>/dev/null || true
 	git tag -f "$(VERSION)"
 	git push --tags origin master
-	targit -a .github -c -f akerl/$(PACKAGE) $(VERSION) $(RELEASE_FILE)
+	targit -a .github -c -f $(ORG)/$(PACKAGE) $(VERSION) $(RELEASE_FILE)
 
 local: build push
 
