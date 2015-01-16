@@ -7,3 +7,7 @@ This is my package repo for [s6-linux-utils](http://www.skarnet.org/software/s6-
 
 The `upstream/` directory is taken directly from upstream. The rest of the repository is my packaging scripts for compiling a distributable build.
 
+## License
+
+The s6-linux-utils upstream code is ISC licensed. My packaging code is MIT licensed.
+
