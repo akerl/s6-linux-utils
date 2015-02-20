@@ -16,14 +16,14 @@ SKALIBS_TAR = skalibs.tar.gz
 SKALIBS_DIR = /tmp/skalibs
 SKALIBS_PATH = --with-sysdeps=$(SKALIBS_DIR)/usr/lib/skalibs/sysdeps --with-lib=$(SKALIBS_DIR)/usr/lib/skalibs --with-include=$(SKALIBS_DIR)/usr/include --with-dynlib=$(SKALIBS_DIR)/usr/lib
 
-.PHONY : default manual container deps version build push local
+.PHONY : default submodule manual container deps version build push local
 
-default: upstream/Makefile container
+default: submodule container
 
-upstream/Makefile:
+submodule:
 	git submodule update --init
 
-manual:
+manual: submodule
 	./meta/launch /bin/bash || true
 
 container:
@@ -36,7 +36,7 @@ deps:
 	tar -x -C $(SKALIBS_DIR) -f $(SKALIBS_TAR)
 	cp -R /usr/include/{linux,asm,asm-generic} $(SKALIBS_DIR)/usr/include/
 
-build: deps
+build: submodule deps
 	rm -rf $(BUILD_DIR)
 	cp -R upstream $(BUILD_DIR)
 	sed -i 's/0700/0755/' $(BUILD_DIR)/package/modes
