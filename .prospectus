@@ -1,0 +1,30 @@
+item do
+  expected do
+    github_tag
+    repo 'skarnet/s6-linux-utils'
+    regex /^v([\d.]+)$/
+  end
+
+  actual do
+    git_tag
+    regex /^(.*)-\d+$/
+  end
+
+  deps do
+    item do
+      name 'skalibs'
+
+      expected do
+        github_release
+        repo 'amylum/skalibs'
+      end
+
+      actual do
+        grep
+        file 'Makefile'
+        regex /^SKALIBS_VERSION = ([\d.-]+)$/
+      end
+    end
+  end
+end
+
