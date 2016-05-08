@@ -7,10 +7,10 @@ RELEASE_FILE = /tmp/$(PACKAGE).tar.gz
 PACKAGE_VERSION = $$(awk -F= '/^version/ {print $$2}' upstream/package/info)
 PATCH_VERSION = $$(cat version)
 VERSION = $(PACKAGE_VERSION)-$(PATCH_VERSION)
-CONF_FLAGS = --enable-allstatic --enable-static --enable-static-libc
+CONF_FLAGS =
 PATH_FLAGS = --prefix=/usr
 
-SKALIBS_VERSION = 2.3.10.0-38
+SKALIBS_VERSION = 2.3.10.0-40
 SKALIBS_URL = https://github.com/amylum/skalibs/releases/download/$(SKALIBS_VERSION)/skalibs.tar.gz
 SKALIBS_TAR = skalibs.tar.gz
 SKALIBS_DIR = /tmp/skalibs
