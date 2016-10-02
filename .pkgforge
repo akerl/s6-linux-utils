@@ -4,13 +4,15 @@ org 'amylum'
 licenses 'COPYING'
 
 deps(
-  skalibs: '2.3.10.0-40'
+  skalibs: '2.3.10.0-40',
+  'linux-api-headers': '4.8-rc6-2'
 )
 
 configure_flags(
   prefix: '/usr',
   sbindir: '/usr/bin',
   libexecdir: '/usr/lib',
+  "with-include=#{dep(:'linux-api-headers')}/usr/include": nil,
   'with-include': "#{dep(:skalibs)}/usr/include",
   'with-lib': "#{dep(:skalibs)}/usr/lib/skalibs",
   'with-dynlib': "#{dep(:skalibs)}/usr/lib",
