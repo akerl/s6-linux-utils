@@ -1,6 +1,8 @@
 s6-linux-utils
 =========
 
+[![Build Status](https://img.shields.io/circleci/project/amylum/s6-linux-utils/master.svg)](https://circleci.com/gh/amylum/s6-linux-utils)
+[![GitHub release](https://img.shields.io/github/release/amylum/s6-linux-utils.svg)](https://github.com/amylum/s6-linux-utils/releases)
 [![ISC Licensed](https://img.shields.io/badge/license-ISC-green.svg)](https://tldrlegal.com/license/-isc-license)
 
 This is my package repo for [s6-linux-utils](http://www.skarnet.org/software/s6-linux-utils/), a package of common utilities by [Laurent Bercot](http://skarnet.org/).

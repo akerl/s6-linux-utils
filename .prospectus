@@ -1,3 +1,5 @@
+Prospectus.extra_dep('file', 'pkgforge')
+
 item do
   expected do
     github_tag
@@ -11,20 +13,20 @@ item do
   end
 
   deps do
-    item do
-      name 'skalibs'
+    PkgForge.load_from_file.deps.each do |dep_name, current_version|
+      item do
+        name dep_name
 
-      expected do
-        github_release
-        repo 'amylum/skalibs'
-      end
+        expected do
+          github_release
+          repo "amylum/#{dep_name}"
+        end
 
-      actual do
-        grep
-        file 'Makefile'
-        regex /^SKALIBS_VERSION = ([\d.-]+)$/
+        actual do
+          static
+          set current_version
+        end
       end
     end
   end
 end
-

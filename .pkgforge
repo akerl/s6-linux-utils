@@ -1,0 +1,30 @@
+name 's6-linux-utils'
+org 'amylum'
+
+licenses 'COPYING'
+
+deps(
+  skalibs: '2.3.10.0-40'
+)
+
+configure_flags(
+  prefix: '/usr',
+  sbindir: '/usr/bin',
+  libexecdir: '/usr/lib',
+  'with-include': "#{dep(:skalibs)}/usr/include",
+  'with-lib': "#{dep(:skalibs)}/usr/lib/skalibs",
+  'with-dynlib': "#{dep(:skalibs)}/usr/lib",
+  'with-sysdeps': "#{dep(:skalibs)}/usr/lib/skalibs/sysdeps"
+)
+
+harden
+
+build do
+  configure
+  make
+  install
+end
+
+test do
+  # TODO: tests
+end
