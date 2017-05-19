@@ -5,7 +5,7 @@ licenses 'COPYING'
 
 deps(
   skalibs: '2.5.0.0-1',
-  'linux-api-headers': '4.10-1'
+  'linux-api-headers': '4.11-1'
 )
 
 configure_flags(
