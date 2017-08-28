@@ -4,8 +4,14 @@ org 'amylum'
 licenses 'COPYING'
 
 deps(
-  skalibs: '2.5.1.1-1',
-  'linux-api-headers': '4.12-1'
+  skalibs: {
+    version: '2.5.1.1-1',
+    checksum: '1a4947186b8a19047258f76f2b297f6d301a48147b14e61ba093b4462d19ce9f'
+  },
+  'linux-api-headers': {
+    version: '4.12-1',
+    checksum: '25d3672456a93cc7f6743d4b2c227ad7a9456f4ec2a9f09ab7f2e9e6cb56aeaa'
+  }
 )
 
 configure_flags(
