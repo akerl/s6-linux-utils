@@ -5,8 +5,8 @@ licenses 'COPYING'
 
 deps(
   skalibs: {
-    version: '2.5.1.1-1',
-    checksum: '1a4947186b8a19047258f76f2b297f6d301a48147b14e61ba093b4462d19ce9f'
+    version: '2.6.0.0-1',
+    checksum: 'd5b9c635ef628e51daeb5b1e368382b14c43b5ece2d8acce9db6c7c4bab8c001'
   },
   'linux-api-headers': {
     version: '4.12-1',
