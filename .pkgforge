@@ -9,8 +9,8 @@ deps(
     checksum: '00d8128bc935f5175c9f24258532593d2b156f0551feec3457abcf48a61cef93'
   },
   'linux-api-headers': {
-    version: '4.15-2',
-    checksum: 'dbfe68e7620b09fe2996d83fe4ae738dddb2486885b9d5ef3dc27ae77d7585ba'
+    version: '4.16-1',
+    checksum: '55af258de8663de5ec97db875651eaeecc209b47454dbbf27757d4de595e618d'
   }
 )
 
